@@ -1,0 +1,22 @@
+root = true
+
+# Default file settings
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Kotlin (https://android.github.io/kotlin-guides/style.html#indentation)
+[{*.kt,kts}]
+indent_size = 4
+indent_style = space
+
+[*.yml]
+indent_size = 2
+indent_style = space
+
+[*.md]
+ij_wrap_on_typing = true
+ij_any_wrap_long_lines = true
+ij_visual_guides = 80
