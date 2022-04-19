@@ -26,6 +26,24 @@ class CompanyClient(private val hubSpotClient: Client) {
         CompanyNotFoundException::class,
         HttpRequestException::class
     )
+    fun findCompany(companyId: BigInteger): Company {
+        val requestUrl = ClientRequestCatalog.V3.COMPANIES_DETAIL.replace(
+            "{companyId}", companyId.toString()
+        )
+
+        val response = Requester.requestJson(hubSpotClient, RequestMethod.GET, requestUrl)
+
+        if (response.isSuccess) {
+            return Mapper.mapToObject(response.body)
+        } else {
+            when (response.status) {
+                404 -> throw CompanyNotFoundException(companyId)
+                else -> throw HttpRequestException(response.status, response.statusText)
+            }
+        }
+    }
+
+
     fun <P> changeCompany(companyId: BigInteger, request: CompanyRequest<P>): Company {
         val requestUrl = ClientRequestCatalog.V3.COMPANIES_DETAIL.replace(
             "{companyId}", companyId.toString()

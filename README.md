@@ -4,11 +4,11 @@ General implementation of [HubSpot](https://developers.hubspot.com/docs/api/crm/
 🎈 Currently in progress, send issues or pull requests 🙌🏼
 
 ## Supported features
-| Feature 	 | List 	 | Read 	 | Write 	 | Change 	 | Delete 	 |
-|-----------|--------|--------|---------|----------|----------|
-| Company 	 | ✅    	 | ✅    	 | ✅     	 | ✅      	 | ✅      	 |
-| Contact 	 | ❌    	 | ❌    	 | ❌     	 | ❌      	 | ❌      	 |
-| Deal    	 | ❌    	 | ❌    	 | ❌     	 | ❌      	 | ❌      	 |
+| Feature 	 | List 	 | Read 	 | Create 	 | Change 	 | Delete 	 |
+|-----------|--------|--------|----------|----------|----------|
+| Company 	 | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
+| Contact 	 | ❌    	 | ❌    	 | ❌     	  | ❌      	 | ❌      	 |
+| Deal    	 | ❌    	 | ❌    	 | ❌     	  | ❌      	 | ❌      	 |
 
 ## Usage Examples
 
