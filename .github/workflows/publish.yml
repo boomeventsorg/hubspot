@@ -1,0 +1,33 @@
+name: Release library
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: '17'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+        working-directory: ./hubspot
+
+      - name: Build with Gradle
+        run: ./gradlew build -x test
+        working-directory: ./hubspot
+
+      - name: Publish library
+        env:
+          GITHUB_RELEASE: ${{ github.event.release.tag_name }}
+          GITHUB_TOKEN: ${{ secrets.GRADLE_PUBLISH_TOKEN }}
+          GITHUB_USERNAME: ${{ secrets.GRADLE_PUBLISH_USER }}
+        run: ./gradlew publish
+        working-directory: ./hubspot
