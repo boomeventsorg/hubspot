@@ -11,7 +11,7 @@ import java.math.BigInteger
 
 class CompanyClient(private val hubSpotClient: Client) {
 
-    fun <P> createCompany(request: CompanyRequest<P>): Company<P> {
+    fun <P> createCompany(request: CompanyRequest<P>): Company {
         val response = Requester.requestJson(hubSpotClient, RequestMethod.POST, ClientRequestCatalog.V3.COMPANIES, emptyMap(), request)
 
         if (response.isSuccess) {
@@ -26,7 +26,7 @@ class CompanyClient(private val hubSpotClient: Client) {
         CompanyNotFoundException::class,
         HttpRequestException::class
     )
-    fun <P> changeCompany(companyId: BigInteger, request: CompanyRequest<P>): Company<P> {
+    fun <P> changeCompany(companyId: BigInteger, request: CompanyRequest<P>): Company {
         val requestUrl = ClientRequestCatalog.V3.COMPANIES_DETAIL.replace(
             "{companyId}", companyId.toString()
         )
