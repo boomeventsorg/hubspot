@@ -1,5 +1,6 @@
 # 🤖 HubSpot Kotlin SDK
 General implementation of [HubSpot](https://developers.hubspot.com/docs/api/crm/companies) CRM API in tiny Kotlin SDK.
+
 🎈 Currently in progress, send issues or pull requests 🙌🏼
 
 ## Supported features

@@ -15,6 +15,7 @@ object Requester {
             RequestMethod.GET -> Unirest.get(apiPath)
             RequestMethod.POST -> Unirest.post(apiPath)
             RequestMethod.PATCH -> Unirest.patch(apiPath)
+            RequestMethod.DELETE -> Unirest.delete(apiPath)
         }
 
         // Associate default headers used in every request
@@ -48,5 +49,20 @@ object Requester {
         }
 
         return request.asJson()
+    }
+
+
+    /** Request void endpoint (without any response data) */
+    fun requestVoid(
+        client: Client,
+        method: RequestMethod,
+        path: String,
+        query: Map<String, String> = emptyMap(),
+        body: Any? = null
+    ): HttpResponse<*> {
+        return builder(client, method, path)
+            .header("Content-Type", "application/json")
+            .queryString(query)
+            .asEmpty()
     }
 }

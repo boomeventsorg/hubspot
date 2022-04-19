@@ -43,4 +43,21 @@ class CompanyClient(private val hubSpotClient: Client) {
         }
     }
 
+    @Throws(
+        HttpRequestException::class
+    )
+    fun removeCompany(companyId: BigInteger) {
+        val requestUrl = ClientRequestCatalog.V3.COMPANIES_DETAIL.replace(
+            "{companyId}", companyId.toString()
+        )
+
+        // Unknown company returns HTTP code 204
+        val response = Requester.requestVoid(hubSpotClient, RequestMethod.DELETE, requestUrl)
+
+        if (!response.isSuccess) {
+            when (response.status) {
+                else -> throw HttpRequestException(response.status, response.statusText)
+            }
+        }
+    }
 }

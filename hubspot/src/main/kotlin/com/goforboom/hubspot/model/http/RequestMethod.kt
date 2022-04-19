@@ -4,4 +4,5 @@ enum class RequestMethod {
     GET,
     POST,
     PATCH,
+    DELETE
 }
