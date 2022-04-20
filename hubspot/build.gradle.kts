@@ -41,8 +41,8 @@ java {
 }
 
 signing {
-    val signingKey: String = System.getenv("GRADLE_GPG_SIGN_KEY")
-    val signingPassword: String = System.getenv("GRADLE_GPG_SIGN_PASSWORD")
+    val signingKey: String? = System.getenv("GRADLE_GPG_SIGN_KEY")
+    val signingPassword: String? = System.getenv("GRADLE_GPG_SIGN_PASSWORD")
 
     useInMemoryPgpKeys(signingKey, signingPassword)
 

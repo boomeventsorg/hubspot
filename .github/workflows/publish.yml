@@ -4,6 +4,15 @@ on:
   release:
     types: [ published ]
 
+env:
+  # Gradle GPG Keys
+  GRADLE_GPG_SIGN_KEY: ${{ secrets.GRADLE_GPG_SIGN_KEY }}
+  GRADLE_GPG_SIGN_PASSWORD: ${{ secrets.GRADLE_GPG_SIGN_PASSWORD }}
+
+  # Sonatype
+  SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+  SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,14 +34,5 @@ jobs:
         working-directory: ./hubspot
 
       - name: Publish library
-        env:
-          # Gradle GPG Keys
-          GRADLE_GPG_SIGN_KEY: ${{ secrets.GRADLE_GPG_SIGN_KEY }}
-          GRADLE_GPG_SIGN_PASSWORD: ${{ secrets.GRADLE_GPG_SIGN_PASSWORD }}
-
-          # Sonatype
-          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
-          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
-
         run: ./gradlew publish
         working-directory: ./hubspot
