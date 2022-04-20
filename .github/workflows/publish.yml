@@ -26,8 +26,13 @@ jobs:
 
       - name: Publish library
         env:
-          GITHUB_RELEASE: ${{ github.event.release.tag_name }}
-          GITHUB_TOKEN: ${{ secrets.GRADLE_PUBLISH_TOKEN }}
-          GITHUB_USERNAME: ${{ secrets.GRADLE_PUBLISH_USER }}
+          # Gradle GPG Keys
+          GRADLE_GPG_SIGN_KEY: ${{ secrets.GRADLE_GPG_SIGN_KEY }}
+          GRADLE_GPG_SIGN_PASSWORD: ${{ secrets.GRADLE_GPG_SIGN_PASSWORD }}
+
+          # Sonatype
+          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+
         run: ./gradlew publish
         working-directory: ./hubspot
