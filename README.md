@@ -3,6 +3,9 @@ General implementation of [HubSpot](https://developers.hubspot.com/docs/api/crm/
 
 🎈 Currently in progress, send issues or pull requests 🙌🏼
 
+🚀 Install from offical Maven repository with `com.goforboom:hubspot-sdk:$VERSION`<br>
+⚠️ GitHub packages is depricated, use official Maven repository
+
 ## Supported features
 | Feature 	 | List 	 | Read 	 | Create 	 | Change 	 | Delete 	 |
 |-----------|--------|--------|----------|----------|----------|
@@ -45,7 +48,7 @@ val companyRequest = CompanyRequest(
     )
 )
 
-val companyResponse = companiesClient.createCompany(companyData)
+val companyResponse = companiesClient.createCompany(companyRequest)
 
 println(companyResponse.id) // HubSpot company ID
 println(companyResponse.properties["name"]) // John Doe
