@@ -9,8 +9,8 @@ plugins {
     id("signing")
 }
 
-group = "com.goforboom.hubspot"
-version = "1.0.0"
+group = "com.goforboom"
+version = "1.0.1"
 
 java.sourceCompatibility = JavaVersion.VERSION_11
 java.targetCompatibility = JavaVersion.VERSION_11
@@ -53,12 +53,11 @@ signing {
 publishing {
     publications {
         create<MavenPublication>("sdk") {
-            groupId = "com.goforboom.hubspot"
-            artifactId = "sdk"
-            version = version
-
             pom {
+                groupId = "com.goforboom"
+                artifactId = "hubspot-sdk"
                 version = version
+
                 name.set("HubSpot SDK")
                 description.set("Implementation of HubSpot API for Java/Kotlin in tiny SDK")
                 url.set("https://github.com/goforboom/hubspot")
