@@ -38,8 +38,6 @@ object Requester {
         query: Map<String, String> = emptyMap(),
         body: Any? = null
     ): HttpResponse<JsonNode> {
-        Unirest.config().objectMapper = JacksonObjectMapper()
-
         val request = builder(client, method, path)
             .header("Content-Type", "application/json")
             .queryString(query)
@@ -60,9 +58,14 @@ object Requester {
         query: Map<String, String> = emptyMap(),
         body: Any? = null
     ): HttpResponse<*> {
-        return builder(client, method, path)
+        val request = builder(client, method, path)
             .header("Content-Type", "application/json")
             .queryString(query)
-            .asEmpty()
+
+        if (request is HttpRequestWithBody && body !== null) {
+            request.body(body).asEmpty()
+        }
+
+        return request.asEmpty()
     }
 }
