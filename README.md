@@ -7,11 +7,23 @@ General implementation of [HubSpot](https://developers.hubspot.com/docs/api/crm/
 ⚠️ GitHub packages is depricated, use official Maven repository
 
 ## Supported features
-| Feature 	 | List 	 | Read 	 | Create 	 | Change 	 | Delete 	 |
-|-----------|--------|--------|----------|----------|----------|
-| Company 	 | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
-| Contact 	 | ❌    	 | ❌    	 | ❌     	  | ❌      	 | ❌      	 |
-| Deal    	 | ❌    	 | ❌    	 | ❌     	  | ❌      	 | ❌      	 |
+| Feature 	        | List 	 | Read 	 | Create 	 | Change 	 | Delete 	 |
+|------------------|--------|--------|----------|----------|----------|
+| Company 	        | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
+| Custom objects 	 | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
+| Contact 	        | ❌    	 | ❌    	 | ❌     	  | ❌      	 | ❌      	 |
+| Deal    	        | ❌    	 | ❌    	 | ❌     	  | ❌      	 | ❌      	 |
+
+## Supported types
+
+| Type    | Note                                     | Supported |
+|---------|------------------------------------------|-----------|
+| String  | -                                        | ✅         |
+| Boolean | -                                        | ✅         |
+| Long    | -                                        | ✅         |
+| Int     | -                                        | ✅         |
+| Enum    | Use Java String converted                | ❌         |
+| Date    | Use Java 8 dates with toString formatter | ❌         |
 
 ## Usage Examples
 
@@ -36,6 +48,8 @@ val client = Client(
     apiKey = "xxx"
 )
 ```
+
+## #️⃣ Company entity
 
 ### Create brand-new company
 ```kotlin
@@ -69,4 +83,34 @@ val companyResponse = companiesClient.changeCompany(123456789, companyRequest)
 
 println(companyResponse.id) // HubSpot company ID
 println(companyResponse.properties["name"]) // John Doe
+```
+
+## #️⃣ Custom objects
+
+### Create brand-new custom object record
+```kotlin
+val request = CustomObjectRequest(
+    properties = MySuperEventProperties(
+        name = "Party #2022",
+        address = "New York",
+
+        // Date must be formatted as "YYYY-MM-DD"
+        dateFrom = LocalDate
+            .now()
+            .plusDays(10)
+            .format(DateTimeFormatter.ISO_LOCAL_DATE),
+        dateUntil = LocalDate
+            .now()
+            .plusDays(15)
+            .format(DateTimeFormatter.ISO_LOCAL_DATE),
+    )
+)
+
+// HubSpot client and name of custom object table
+val myEventsClient = CustomObjectClient(client, "events")
+
+val response = myEventsClient.createCustomObjectRecord(request)
+
+println(response.id) // HubSpot ID
+println(response.properties["name"]) // Party #2022
 ```
