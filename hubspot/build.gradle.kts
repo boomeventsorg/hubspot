@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "com.goforboom"
-version = "1.1.0"
+version = "1.2.0"
 
 java.sourceCompatibility = JavaVersion.VERSION_11
 java.targetCompatibility = JavaVersion.VERSION_11

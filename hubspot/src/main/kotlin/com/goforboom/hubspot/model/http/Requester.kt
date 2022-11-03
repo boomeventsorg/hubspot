@@ -19,9 +19,9 @@ object Requester {
         }
 
         // Associate default headers used in every request
-        // https://developers.hubspot.com/docs/api/intro-to-auth
+        // https://developers.hubspot.com/docs/api/private-apps#make-api-calls-with-your-app-s-access-token
         request
-            .queryString("hapikey", client.apiKey)
+            .header("Authorization", "Bearer ${client.apiKey}")
             .withObjectMapper(
                 JacksonObjectMapper(Mapper.objectMapper)
             )
