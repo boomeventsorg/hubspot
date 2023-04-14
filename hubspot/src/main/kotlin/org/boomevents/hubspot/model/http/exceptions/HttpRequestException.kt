@@ -1,6 +1,6 @@
-package com.goforboom.hubspot.model.http.exceptions
+package org.boomevents.hubspot.model.http.exceptions
 
-import com.goforboom.hubspot.exceptions.HubSpotException
+import org.boomevents.hubspot.exceptions.HubSpotException
 
 class HttpRequestException(
     val responseCode: Int,

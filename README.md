@@ -3,8 +3,7 @@ General implementation of [HubSpot](https://developers.hubspot.com/docs/api/crm/
 
 🎈 Currently in progress, send issues or pull requests 🙌🏼
 
-🚀 Install from offical Maven repository with `com.goforboom:hubspot-sdk:$VERSION`<br>
-⚠️ GitHub packages is depricated, use official Maven repository
+🚀 Install from offical Maven repository with `org.boomevents:hubspot-sdk:$VERSION`<br>
 
 ## Supported features
 | Feature 	        | List 	 | Read 	 | Create 	 | Change 	 | Delete 	 |

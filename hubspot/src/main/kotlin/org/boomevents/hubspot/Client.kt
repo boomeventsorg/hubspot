@@ -1,4 +1,4 @@
-package com.goforboom.hubspot
+package org.boomevents.hubspot
 
 data class Client(
     val apiBasePath: String,

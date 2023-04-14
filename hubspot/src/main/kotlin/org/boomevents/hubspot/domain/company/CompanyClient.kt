@@ -1,12 +1,12 @@
-package com.goforboom.hubspot.domain.company
+package org.boomevents.hubspot.domain.company
 
-import com.goforboom.hubspot.model.http.RequestMethod
-import com.goforboom.hubspot.model.http.Requester
-import com.goforboom.hubspot.Client
-import com.goforboom.hubspot.ClientRequestCatalog
-import com.goforboom.hubspot.domain.company.exceptions.CompanyNotFoundException
-import com.goforboom.hubspot.model.http.exceptions.HttpRequestException
-import com.goforboom.hubspot.model.mapper.Mapper
+import org.boomevents.hubspot.model.http.RequestMethod
+import org.boomevents.hubspot.model.http.Requester
+import org.boomevents.hubspot.Client
+import org.boomevents.hubspot.ClientRequestCatalog
+import org.boomevents.hubspot.domain.company.exceptions.CompanyNotFoundException
+import org.boomevents.hubspot.model.http.exceptions.HttpRequestException
+import org.boomevents.hubspot.model.mapper.Mapper
 import java.math.BigInteger
 
 class CompanyClient(private val hubSpotClient: Client) {

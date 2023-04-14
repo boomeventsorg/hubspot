@@ -1,4 +1,4 @@
-package com.goforboom.hubspot.model.mapper
+package org.boomevents.hubspot.model.mapper
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper

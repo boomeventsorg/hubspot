@@ -1,4 +1,4 @@
-package com.goforboom.hubspot.model.http
+package org.boomevents.hubspot.model.http
 
 enum class RequestMethod {
     GET,

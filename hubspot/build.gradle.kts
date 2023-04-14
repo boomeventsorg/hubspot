@@ -9,8 +9,8 @@ plugins {
     id("signing")
 }
 
-group = "com.goforboom"
-version = "1.2.0"
+group = "org.boomevents"
+version = "1.2.2"
 
 java.sourceCompatibility = JavaVersion.VERSION_11
 java.targetCompatibility = JavaVersion.VERSION_11

@@ -1,4 +1,4 @@
-package com.goforboom.hubspot.domain.company
+package org.boomevents.hubspot.domain.company
 
 import com.goforboom.hubspot.domain.DataEntity
 import java.math.BigInteger

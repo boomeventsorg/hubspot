@@ -1,4 +1,4 @@
-package com.goforboom.hubspot
+package org.boomevents.hubspot
 
 object ClientRequestCatalog {
 

@@ -1,9 +1,9 @@
-package com.goforboom.hubspot.model.http
+package org.boomevents.hubspot.model.http
 
 import kong.unirest.*
 import kong.unirest.jackson.JacksonObjectMapper
-import com.goforboom.hubspot.Client
-import com.goforboom.hubspot.model.mapper.Mapper
+import org.boomevents.hubspot.Client
+import org.boomevents.hubspot.model.mapper.Mapper
 
 object Requester {
 
