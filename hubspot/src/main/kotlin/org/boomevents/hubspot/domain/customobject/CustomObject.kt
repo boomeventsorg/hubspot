@@ -1,6 +1,6 @@
-package com.goforboom.hubspot.domain.customobject
+package org.boomevents.hubspot.domain.customobject
 
-import com.goforboom.hubspot.domain.DataEntity
+import org.boomevents.hubspot.domain.DataEntity
 import java.math.BigInteger
 import java.time.LocalDateTime
 

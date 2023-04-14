@@ -54,13 +54,13 @@ publishing {
     publications {
         create<MavenPublication>("sdk") {
             pom {
-                groupId = "com.goforboom"
+                groupId = "org.boomevents"
                 artifactId = "hubspot-sdk"
                 version = version
 
                 name.set("HubSpot SDK")
                 description.set("Implementation of HubSpot API for Java/Kotlin in tiny SDK")
-                url.set("https://github.com/goforboom/hubspot")
+                url.set("https://github.com/boomevents/hubspot")
 
                 licenses {
                     license {
@@ -71,16 +71,16 @@ publishing {
 
                 developers {
                     developer {
-                        id.set("goforboom")
+                        id.set("boomevents")
                         name.set("BOOM")
-                        email.set("dev@goforboom.com")
+                        email.set("dev@boomevents.com")
                     }
                 }
 
                 scm {
-                    connection.set("scm:git:git://github.com:goforboom/hubspot.git")
-                    developerConnection.set("scm:git:ssh://github.com:goforboom/hubspot.git")
-                    url.set("https://github.com/goforboom/hubspot")
+                    connection.set("scm:git:git://github.com:boomevents/hubspot.git")
+                    developerConnection.set("scm:git:ssh://github.com:boomevents/hubspot.git")
+                    url.set("https://github.com/boomevents/hubspot")
                 }
             }
 

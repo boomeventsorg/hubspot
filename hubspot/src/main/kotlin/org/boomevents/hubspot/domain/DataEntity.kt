@@ -1,4 +1,4 @@
-package com.goforboom.hubspot.domain
+package org.boomevents.hubspot.domain
 
 import java.math.BigInteger
 import java.time.LocalDateTime

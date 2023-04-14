@@ -1,12 +1,12 @@
-package com.goforboom.hubspot.domain.customobject
+package org.boomevents.hubspot.domain.customobject
 
-import com.goforboom.hubspot.model.http.RequestMethod
-import com.goforboom.hubspot.model.http.Requester
-import com.goforboom.hubspot.Client
-import com.goforboom.hubspot.ClientRequestCatalog
-import com.goforboom.hubspot.domain.customobject.exceptions.CustomObjectNotFoundException
-import com.goforboom.hubspot.model.http.exceptions.HttpRequestException
-import com.goforboom.hubspot.model.mapper.Mapper
+import org.boomevents.hubspot.model.http.RequestMethod
+import org.boomevents.hubspot.model.http.Requester
+import org.boomevents.hubspot.Client
+import org.boomevents.hubspot.ClientRequestCatalog
+import org.boomevents.hubspot.domain.customobject.exceptions.CustomObjectNotFoundException
+import org.boomevents.hubspot.model.http.exceptions.HttpRequestException
+import org.boomevents.hubspot.model.mapper.Mapper
 import java.math.BigInteger
 
 class CustomObjectClient(

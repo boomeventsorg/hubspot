@@ -1,5 +1,5 @@
-package com.goforboom.hubspot.domain.customobject.exceptions
+package org.boomevents.hubspot.domain.customobject.exceptions
 
-import com.goforboom.hubspot.exceptions.HubSpotException
+import org.boomevents.hubspot.exceptions.HubSpotException
 
 abstract class CustomObjectException(override val message: String) : HubSpotException(message)

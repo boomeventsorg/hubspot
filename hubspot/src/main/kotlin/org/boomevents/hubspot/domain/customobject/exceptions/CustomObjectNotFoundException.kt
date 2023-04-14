@@ -1,4 +1,4 @@
-package com.goforboom.hubspot.domain.customobject.exceptions
+package org.boomevents.hubspot.domain.customobject.exceptions
 
 import java.math.BigInteger
 
