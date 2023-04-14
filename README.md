@@ -3,15 +3,15 @@ General implementation of [HubSpot](https://developers.hubspot.com/docs/api/crm/
 
 🎈 Currently in progress, send issues or pull requests 🙌🏼
 
-🚀 Install from offical Maven repository with `org.boomevents:hubspot-sdk:$VERSION`<br>
+🚀 Install from official Maven repository with `org.boomevents:hubspot-sdk:$VERSION`<br>
 
 ## Supported features
 | Feature 	        | List 	 | Read 	 | Create 	 | Change 	 | Delete 	 |
 |------------------|--------|--------|----------|----------|----------|
 | Company 	        | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
 | Custom objects 	 | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
+| Deal    	        | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
 | Contact 	        | ❌    	 | ❌    	 | ❌     	  | ❌      	 | ❌      	 |
-| Deal    	        | ❌    	 | ❌    	 | ❌     	  | ❌      	 | ❌      	 |
 
 ## Supported types
 
