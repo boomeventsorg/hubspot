@@ -11,7 +11,7 @@ General implementation of [HubSpot](https://developers.hubspot.com/docs/api/crm/
 | Company 	        | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
 | Custom objects 	 | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
 | Deal    	        | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
-| Contact 	        | ❌    	 | ❌    	 | ❌     	  | ❌      	 | ❌      	 |
+| Contact 	        | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
 
 ## Supported types
 
