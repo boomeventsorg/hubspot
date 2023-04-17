@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "org.boomevents"
-version = "1.3.0"
+version = "1.3.1"
 
 java.sourceCompatibility = JavaVersion.VERSION_11
 java.targetCompatibility = JavaVersion.VERSION_11
@@ -20,8 +20,8 @@ repositories {
 }
 
 dependencies {
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.2")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2")
 
     implementation("com.konghq:unirest-java:3.13.6")
     implementation("com.konghq:unirest-objectmapper-jackson:3.13.6")
