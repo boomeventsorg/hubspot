@@ -1,4 +1,4 @@
-package main.kotlin.org.boomevents.hubspot.domain.contact.exception
+package org.boomevents.hubspot.domain.contact.exception
 
 import org.boomevents.hubspot.exceptions.HubSpotException
 

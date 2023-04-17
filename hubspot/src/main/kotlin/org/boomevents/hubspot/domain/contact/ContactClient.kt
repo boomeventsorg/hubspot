@@ -1,9 +1,8 @@
-package main.kotlin.org.boomevents.hubspot.domain.contact
+package org.boomevents.hubspot.domain.contact
 
-import main.kotlin.org.boomevents.hubspot.domain.contact.exception.ContactNotFoundException
+import org.boomevents.hubspot.domain.contact.exception.ContactNotFoundException
 import org.boomevents.hubspot.Client
 import org.boomevents.hubspot.ClientRequestCatalog
-import org.boomevents.hubspot.domain.company.exceptions.CompanyNotFoundException
 import org.boomevents.hubspot.model.http.RequestMethod
 import org.boomevents.hubspot.model.http.Requester
 import org.boomevents.hubspot.model.http.exceptions.HttpRequestException
@@ -30,7 +29,7 @@ class ContactClient(private val hubSpotClient: Client) {
     }
 
     @Throws(
-        CompanyNotFoundException::class,
+        ContactNotFoundException::class,
         HttpRequestException::class
     )
     fun findContact(contactId: BigInteger): Contact {
@@ -75,7 +74,7 @@ class ContactClient(private val hubSpotClient: Client) {
             "{contactId}", contactId.toString()
         )
 
-        // Unknown company returns HTTP code 204
+        // Unknown contact returns HTTP code 204
         val response = Requester.requestVoid(hubSpotClient, RequestMethod.DELETE, requestUrl)
 
         if (!response.isSuccess) {

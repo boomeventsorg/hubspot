@@ -1,4 +1,4 @@
-package main.kotlin.org.boomevents.hubspot.domain.contact
+package org.boomevents.hubspot.domain.contact
 
 import org.boomevents.hubspot.domain.DataEntity
 import java.math.BigInteger
