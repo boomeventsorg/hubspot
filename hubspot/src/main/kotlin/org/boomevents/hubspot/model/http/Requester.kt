@@ -16,6 +16,7 @@ object Requester {
             RequestMethod.POST -> Unirest.post(apiPath)
             RequestMethod.PATCH -> Unirest.patch(apiPath)
             RequestMethod.DELETE -> Unirest.delete(apiPath)
+            RequestMethod.PUT -> Unirest.put(apiPath)
         }
 
         // Associate default headers used in every request

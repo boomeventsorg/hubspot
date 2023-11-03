@@ -1,8 +1,9 @@
 package org.boomevents.hubspot.model.http
 
-enum class RequestMethod {
+public enum class RequestMethod {
     GET,
     POST,
     PATCH,
-    DELETE
+    DELETE,
+    PUT
 }

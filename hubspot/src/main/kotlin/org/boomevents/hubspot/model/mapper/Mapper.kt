@@ -19,4 +19,9 @@ object Mapper {
     inline fun <reified R> mapToObject(jsonNode: JsonNode): R {
         return objectMapper.readValue(jsonNode.toString(), object : TypeReference<R>() {})
     }
+
+    inline fun <reified R> mapToList(jsonNode: JsonNode): List<R> {
+        val resultsNode = jsonNode.`object`.get("results")
+        return objectMapper.readValue(resultsNode.toString(), object : TypeReference<List<R>>() {})
+    }
 }
