@@ -9,9 +9,10 @@ General implementation of [HubSpot](https://developers.hubspot.com/docs/api/crm/
 | Feature 	        | List 	 | Read 	 | Create 	 | Change 	 | Delete 	 |
 |------------------|--------|--------|----------|----------|----------|
 | Company 	        | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
-| Custom objects 	 | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
+| Custom objects   | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
 | Deal    	        | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
 | Contact 	        | ❌    	 | ✅    	 | ✅     	  | ✅      	 | ✅      	 |
+| Associations	    | ❌    	 | ❌   	  | ✅     	  | ❌      	 | ❌      	 |
 
 ## Supported types
 
@@ -112,4 +113,18 @@ val response = myEventsClient.createCustomObjectRecord(request)
 
 println(response.id) // HubSpot ID
 println(response.properties["name"]) // Party #2022
+```
+### Associate a contact to an existing company with default label
+```kotlin
+
+val associationRequest = AssociationRequest(
+    fromObjectType = CONTACT, // contact, company, deal, etc
+    fromObjectId = 1, // HubSpot ID of the contact
+    toObjectType = COMPANY, // contact, company, deal, etc
+    toObjectId = 2 // HubSpot ID of the company
+)
+
+val associationResponse = associationClient.createDefaultAssociation(associationRequest)
+
+println(associationResponse.id)
 ```
