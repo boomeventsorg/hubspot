@@ -57,7 +57,7 @@ class ContactClient(private val hubSpotClient: Client) {
             return Mapper.mapToObject(response.body)
         } else {
             when (response.status) {
-                404 -> throw ContactNotFoundException(requestUrl)
+                404 -> throw ContactNotFoundException()
                 else -> throw HttpRequestException(response.status, response.statusText)
             }
         }

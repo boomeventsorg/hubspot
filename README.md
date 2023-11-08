@@ -117,6 +117,8 @@ println(response.properties["name"]) // Party #2022
 ### Associate a contact to an existing company with default label
 ```kotlin
 
+val associationClient = AssociationClient(hubspotClient)
+
 val associationRequest = AssociationRequest(
     fromObjectType = CONTACT, // contact, company, deal, etc
     fromObjectId = 1, // HubSpot ID of the contact
