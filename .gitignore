@@ -27,3 +27,6 @@ out/
 ### VS Code ###
 .vscode/
 /.env
+
+### Tests ###
+hubspot/src/test/resources/application.properties
