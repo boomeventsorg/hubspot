@@ -14,5 +14,9 @@ object ClientRequestCatalog {
 
         const val CONTACTS = "/crm/v3/objects/contacts"
         const val CONTACTS_DETAIL = "/crm/v3/objects/contacts/{contactId}"
-    }
+  }
+    object V4 {
+        const val OBJECT_DEFAULT_ASSOCIATION = "/crm/v4/objects/{fromObjectType}/{fromObjectId}/associations/default/{toObjectType}/{toObjectId}"
+        const val OBJECT_WITH_LABEL_ASSOCIATION = "/crm/v4/objects/{fromObjectType}/{fromObjectId}/associations/{toObjectType}/{toObjectId}"
+  }
 }

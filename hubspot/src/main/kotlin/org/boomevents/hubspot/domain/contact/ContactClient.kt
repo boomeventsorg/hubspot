@@ -36,14 +36,28 @@ class ContactClient(private val hubSpotClient: Client) {
         val requestUrl = ClientRequestCatalog.V3.CONTACTS_DETAIL.replace(
             "{contactId}", contactId.toString()
         )
+        return makeRequestFindContact(requestUrl)
+    }
 
+    @Throws(
+        ContactNotFoundException::class,
+        HttpRequestException::class
+    )
+    fun findContact(email: String): Contact {
+        val requestUrl = ClientRequestCatalog.V3.CONTACTS_DETAIL.replace(
+            "{contactId}", email
+        ) + "?idProperty=email"
+        return makeRequestFindContact(requestUrl)
+    }
+
+    private fun makeRequestFindContact(requestUrl: String): Contact {
         val response = Requester.requestJson(hubSpotClient, RequestMethod.GET, requestUrl)
 
         if (response.isSuccess) {
             return Mapper.mapToObject(response.body)
         } else {
             when (response.status) {
-                404 -> throw ContactNotFoundException(contactId)
+                404 -> throw ContactNotFoundException()
                 else -> throw HttpRequestException(response.status, response.statusText)
             }
         }

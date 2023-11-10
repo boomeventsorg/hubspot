@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "org.boomevents"
-version = "1.4.0"
+version = "1.5.0-beta.1"
 
 java.sourceCompatibility = JavaVersion.VERSION_11
 java.targetCompatibility = JavaVersion.VERSION_11
