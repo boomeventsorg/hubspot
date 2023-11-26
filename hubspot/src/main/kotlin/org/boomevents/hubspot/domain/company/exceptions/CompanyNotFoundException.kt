@@ -1,8 +1,6 @@
 package org.boomevents.hubspot.domain.company.exceptions
 
-import java.math.BigInteger
-
 class CompanyNotFoundException(
-    companyId: BigInteger,
+    companyId: Any,
     override val message: String = "Company '$companyId' was not found."
 ) : CompanyException(message)

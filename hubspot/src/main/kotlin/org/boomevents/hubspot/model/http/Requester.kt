@@ -24,7 +24,7 @@ object Requester {
         request
             .header("Authorization", "Bearer ${client.apiKey}")
             .withObjectMapper(
-                JacksonObjectMapper(Mapper.objectMapper)
+                CustomObjectMapper()
             )
 
         return request

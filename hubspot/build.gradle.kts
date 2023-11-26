@@ -1,4 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.gradle.jvm.tasks.Jar
+
 
 plugins {
     kotlin("jvm") version "1.6.10"
@@ -22,17 +24,15 @@ repositories {
 dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.2")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2")
-
-    implementation("com.konghq:unirest-java:3.13.6")
-    implementation("com.konghq:unirest-objectmapper-jackson:3.13.6")
-
+	implementation("com.konghq:unirest-java:3.14.5")
+	implementation("com.konghq:unirest-objectmapper-jackson:4.1.1")
     implementation(
         "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
     )
-
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.junit.vintage:junit-vintage-engine:5.8.2")
     testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
+	implementation(kotlin("script-runtime"))
 }
 
 java {
@@ -65,7 +65,7 @@ publishing {
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
-                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                        url.set("https://www.apache.org/licenses/LICENSE-2.0.txt")
                     }
                 }
 
@@ -127,3 +127,4 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "11"
     }
 }
+
